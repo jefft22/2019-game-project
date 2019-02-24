@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EC2A8F10-9DD8-457D-99C3-FD98ECD670B8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FrizzyAdventure</RootNamespace>
+    <AssemblyName>FrizzyAdventure</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Exceptions\ActorConstructionTypeNotImplementedException.cs" />
+    <Compile Include="Exceptions\BaseGameException.cs" />
+    <Compile Include="Exceptions\LoadResourceFailureException.cs" />
+    <Compile Include="FrizzyAdventureGame.cs" />
+    <Compile Include="Constant\DefaultWindowConstants.cs" />
+    <Compile Include="Managers\Actor\ActorManager.cs" />
+    <Compile Include="Managers\Actor\Block\BlockActor.cs" />
+    <Compile Include="Managers\Actor\Model\ActorZSort.cs" />
+    <Compile Include="Managers\Actor\Model\BasicActorConstruction.cs" />
+    <Compile Include="Managers\Actor\Model\BasicActorConstructionType.cs" />
+    <Compile Include="Managers\Actor\Model\DirectionState.cs" />
+    <Compile Include="Managers\Actor\Model\ActorEvent.cs" />
+    <Compile Include="Managers\Actor\Model\ActorEventAction.cs" />
+    <Compile Include="Managers\Actor\Model\BaseActor.cs" />
+    <Compile Include="Managers\Actor\Model\IActorPhysicalInfo.cs" />
+    <Compile Include="Managers\Actor\Model\IActorRenderInfo.cs" />
+    <Compile Include="Managers\Actor\Player\Model\ActionState.cs" />
+    <Compile Include="Managers\Actor\Player\Model\MovementState.cs" />
+    <Compile Include="Managers\Actor\Player\PlayerActor.cs" />
+    <Compile Include="Managers\Actor\Slime\Model\ActionState.cs" />
+    <Compile Include="Managers\Actor\Slime\SlimeActor.cs" />
+    <Compile Include="Managers\Configuration\ConfigurationManager.cs" />
+    <Compile Include="Managers\Configuration\Constant\DefaultConfigurationConstants.cs" />
+    <Compile Include="Managers\Configuration\Gateway\BaseConfigurationGateway.cs" />
+    <Compile Include="Managers\Configuration\Gateway\WindowsConfigurationGateway.cs" />
+    <Compile Include="Managers\Configuration\Model\ControllerConfiguration.cs" />
+    <Compile Include="Managers\Configuration\Model\GameConfiguration.cs" />
+    <Compile Include="Managers\Controller\Constant\DefaultKeyboardControllerConstants.cs" />
+    <Compile Include="Managers\Controller\ControllerManager.cs" />
+    <Compile Include="Managers\Controller\Gateway\BaseControllerGateway.cs" />
+    <Compile Include="Managers\Controller\Gateway\KeyboardControllerGateway.cs" />
+    <Compile Include="Managers\Controller\Model\ControllerState.cs" />
+    <Compile Include="Managers\Controller\Model\KeyboardControllerMapping.cs" />
+    <Compile Include="Managers\GameState\GameStateManager.cs" />
+    <Compile Include="Managers\GameState\Gateway\GameState.cs" />
+    <Compile Include="Managers\GameState\Model\PlayerState.cs" />
+    <Compile Include="Managers\Hud\Gateway\HudGateway.cs" />
+    <Compile Include="Managers\Hud\HudManager.cs" />
+    <Compile Include="Managers\Map\Gateway\MapGateway.cs" />
+    <Compile Include="Managers\Map\MapManager.cs" />
+    <Compile Include="Managers\Renderer\Constant\RendererConstants.cs" />
+    <Compile Include="Managers\Renderer\Gateway\BaseRendererGateway.cs" />
+    <Compile Include="Managers\Renderer\Gateway\WindowsRendererGateway.cs" />
+    <Compile Include="Managers\Renderer\RendererManager.cs" />
+    <Compile Include="Managers\Resource\Constant\TextureResourceConstants.cs" />
+    <Compile Include="Managers\Resource\Constant\ResourceConstants.cs" />
+    <Compile Include="Managers\Resource\Gateway\BaseResourceGateway.cs" />
+    <Compile Include="Managers\Resource\Gateway\WindowsResourceManager.cs" />
+    <Compile Include="Managers\Resource\Model\TextureKey.cs" />
+    <Compile Include="Managers\Resource\ResourceManager.cs" />
+    <Compile Include="Managers\ServiceLocator\BaseServiceLocator.cs" />
+    <Compile Include="Managers\ServiceLocator\WindowsServiceLocator.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Managers\GameState\Constant\" />
+    <Folder Include="Managers\Map\Constant\" />
+    <Folder Include="Managers\Map\Gateway\Model\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
